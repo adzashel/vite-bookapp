@@ -65,10 +65,16 @@ ul{
 
 .total {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
   margin-top: 10px;
   color: #fff;
+}
+
+.total h4 {
+  background-color: #152d3e;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
 }
 
 .book-container {

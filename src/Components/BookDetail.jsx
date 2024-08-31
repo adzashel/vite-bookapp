@@ -8,7 +8,7 @@ const BookDetail = ({ onHandleClose, show, details  }) => {
         <Modal
           show={show}
           onHide={onHandleClose}
-          size= "md"
+          size= 'lg'
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
