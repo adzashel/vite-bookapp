@@ -1,15 +1,19 @@
 import List from "./List";
+import Loader from "./Loader";
 
-
-const BookList = ({ onHandleShow , currentBooks }) => {
+const BookList = ({ onHandleShow , currentBooks , loading}) => {
   return (
     // Books Section
     <>
       <div className="book-container">
-        <List onHandleShow={onHandleShow} currentBooks={ currentBooks } />
+       { loading ? (
+          <Loader />
+       ) : currentBooks ? (  
+         <List onHandleShow={ onHandleShow } currentBooks={currentBooks } />
+       ) : null }
   </div>
     </>
-    
+
   )
 }
 
