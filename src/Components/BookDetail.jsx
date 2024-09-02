@@ -13,7 +13,7 @@ const BookDetail = ({ onHandleClose, show, details  }) => {
           centered
         >
           <Modal.Header closeButton>
-            <Modal.Title>Book Detail </Modal.Title>
+            <Modal.Title >Book Detail </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Row size={12}>

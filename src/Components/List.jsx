@@ -2,8 +2,8 @@
 const List = ({ currentBooks, onHandleShow }) => {
   return (
     <>
-      {currentBooks.map((book, index) => (
-        <div className="cards" key={index}>
+      {currentBooks.map((book) => (
+        <div className="cards" key={book.id}>
           <img src={book.image} alt=""  onClick={() => onHandleShow(book.id)}/>
           <div className="card-caption">
             <h3>{book.title}</h3>

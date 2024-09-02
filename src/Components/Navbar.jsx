@@ -1,3 +1,5 @@
+import ThemeToggle from "./ThemeToggle";
+
 
 const Navbar = ({ search , setSearch , onSearchBook}) => {
   return (
@@ -37,6 +39,7 @@ const Navbar = ({ search , setSearch , onSearchBook}) => {
           >
             Search
           </button>
+          <ThemeToggle/>
         </div>
       </div>
     </>
