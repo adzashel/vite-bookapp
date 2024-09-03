@@ -7,6 +7,7 @@ import Total from "../Total";
 import PrevPagesButton from "../PrevPagesButton";
 import Pages from "../Pages";
 import NextPagesButton from "../NextPagesButton";
+import ModalPage from "../ModalPage";
 
 // Api Source
 const apiUrl = "https://www.dbooks.org/api/recent";
@@ -99,7 +100,9 @@ const Container = () => {
           pages={totalData}
         />
       </Paginations>
-      <BookDetail onHandleClose={handleClose} show={show} details={details} />
+      <BookDetail> 
+          <ModalPage show={ show } details={ details } onHandleClose={ handleClose } />
+      </BookDetail>
     </>
   );
 };

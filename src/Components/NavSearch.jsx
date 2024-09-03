@@ -1,6 +1,7 @@
 import ThemeToggle from "./ThemeToggle";
+import searchImg from "../assets/search.svg";
 
-const NavSearch = ({ search , onSearch , onSearchBook}) => {
+const NavSearch = ({ search, onSearch, onSearchBook }) => {
   return (
     <div className="nav-search">
       <input
@@ -12,11 +13,12 @@ const NavSearch = ({ search , onSearch , onSearchBook}) => {
       />
       <button
         type="search"
-        className="search-button"
         onClick={() => onSearchBook(search)}
+        className="search-icon"
       >
-        Search
+        <img src={searchImg} alt="Search" />
       </button>
+
       <ThemeToggle />
     </div>
   );
