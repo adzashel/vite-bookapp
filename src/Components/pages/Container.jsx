@@ -11,6 +11,7 @@ import NextPagesButton from "../NextPagesButton";
 // Api Source
 const apiUrl = "https://www.dbooks.org/api/recent";
 const searchUrl = "https://www.dbooks.org/api/search/";
+const detailUrl = "https://www.dbooks.org/api/book/";
 
 const Container = () => {
   const [books, setBooks] = useState([]);
@@ -21,24 +22,18 @@ const Container = () => {
   const [show, setShow] = useState(false);
   const [details, setDetails] = useState(null);
 
-  const handleClose = () => setShow(false);
-  const handleShow = (id) => {
-    // fetch data from server
-    fetch("https://www.dbooks.org/api/book/" + id)
-      .then((response) => response.json())
-      .then((book) => {
-        setDetails(book);
-      });
-    setShow(true);
-  };
-
   // fetch api
-  const getApi = () => {
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((result) => {
-        setBooks(result.books);
-      });
+  const getApi = async () => {
+    try {
+      setLoading(true);
+      const getData = await fetch(apiUrl);
+      const result = await getData.json();
+      setBooks(result.books);
+      setLoading(false);
+    } catch (e) {
+      alert(e.message);
+      setLoading(false);
+    }
   };
 
   // useEffect
@@ -46,8 +41,16 @@ const Container = () => {
     getApi();
   }, []);
 
-  // when button search are clicked
+  const handleClose = () => setShow(false);
+  const handleShow = async (id) => {
+    // fetch data from server
+    const getData = await fetch(detailUrl + id );
+    const result = await getData.json();
+    setDetails(result);
+    setShow(true);
+  };
 
+  // when button search are clicked
   const searchBook = async (search) => {
     try {
       setLoading(true);
