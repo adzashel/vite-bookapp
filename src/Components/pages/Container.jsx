@@ -97,7 +97,7 @@ const Container = () => {
         <NextPagesButton
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          pages={totalData}
+          pages={pages}
         />
       </Paginations>
       <BookDetail> 
