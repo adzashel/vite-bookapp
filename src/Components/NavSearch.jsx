@@ -9,6 +9,12 @@ const NavSearch = ({ search, onSearch, onSearchBook }) => {
         placeholder="Search for books..."
         className="inpt-search"
         onChange={(e) => onSearch(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === "Tab") {
+            onSearchBook(search);
+            e.target.blur();
+          }
+        }}
         value={search}
       />
       <button
@@ -25,3 +31,4 @@ const NavSearch = ({ search, onSearch, onSearchBook }) => {
 };
 
 export default NavSearch;
+ 

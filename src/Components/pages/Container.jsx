@@ -70,7 +70,6 @@ const Container = () => {
   const lastPostIndex = currentPage * booksPerPage;
   const firstPostIndex = lastPostIndex - booksPerPage;
   const currentBooks = books.slice(firstPostIndex, lastPostIndex);
-
   let pages = [];
   let active = currentPage;
   const totalData = books.length;
