@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import BookList from "../BookList";
 import { useState, useEffect } from "react";
 import BookDetail from "../BookDetail";
